@@ -91,3 +91,8 @@
 15]How do you handle exceptions in JDBC?
 
     ->To handle exceptions in JDBC i will make use of try-catch block for SQLExceptions.
+
+
+16]What is SQL Injection ?
+
+    ->SQL Injection is a process where attacker manipulates the SQL query by injecting malicious input
