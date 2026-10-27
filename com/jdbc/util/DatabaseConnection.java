@@ -6,6 +6,11 @@ import java.sql.SQLException;
 
 public class DatabaseConnection 
 {
+
+	private DatabaseConnection()
+	{
+		
+	}
 	public static Connection getConnection()
 	{
 		try {
