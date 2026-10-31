@@ -1,4 +1,5 @@
 1]Explain indetail about JDBC ?
+
     ->JDBC stands for java database connectivity
     ->JDBC is an API that allows java programs to connect and interact with the database
     ->To make my java application to connect and interact with the database i will follow 6 steps:-
@@ -25,10 +26,11 @@
         i)JDBC-ODBC Bridge driver
         ii)Native API
         iii)Netword protocol Driver
-        iv)Thin Driver (which is most widely used because it is platform independent and requires no native libraries)
+        iv)Thin Driver (is most widely used because it is platform independent and requires no native libraries)
 
 
 4]Difference between statement vs prepared statement vs callable statement ?
+
     ->Statement is used for static SQL queries
     ->PreparedStatement is used for dynamic queries with parameters and it is more secure and prevents SQL injection problem.
     ->Callable statement is used to call the stored procedures from java using JBDC
@@ -63,13 +65,16 @@
     ->To handle resoruce properly in JDBC i will use finally block or try with resource to close Connection,Statement and ResultSet.
 
 
-10]How do you prevent SQL injection in JDBC ?
+10]What is SQL injection and how do you prevent SQL injection in JDBC ?
 
-    ->To prevent SQL injection in JDBC i will use preparedStatement instead of concatinating the Strings in Statement.
+    ->SQL Injection is a process where attacker manipulates the SQL query by injection malicious input
+    ->To prevent SQL injection in JDBC i will use preparedStatement instead of concatinating the Strings in Statement,Because
+     Query structure is fixed,Parameters are treated as values not as SQL code and special characters are escaped automatically.
 
 11]What is connection pooling and why is it important ?
 
-    ->Connection pooling means re-using existing database connections and it improves the performance.
+    ->Creating new connection everytime is expensive so i use collection pooling
+    ->Connection pooling means re-using existing database connections that improves the performance significantly.
 
 
 12]Can we use multiple ResultSets on a single Statement object ?
@@ -93,6 +98,22 @@
     ->To handle exceptions in JDBC i will make use of try-catch block for SQLExceptions.
 
 
-16]What is SQL Injection ?
+16]Explain JDBC Architecture ?
 
-    ->SQL Injection is a process where attacker manipulates the SQL query by injecting malicious input
+        Java Application
+              |
+              |
+              |
+           JDBC API
+              |
+              |
+              |
+      JDBC Driver Manager
+              |
+              |
+              |
+    JDBC Driver(Thin Driver)
+              |
+              |
+              |
+        Database(MySQL)        
